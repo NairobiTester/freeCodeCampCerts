@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap');
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color:
+    #090C25;
+    color: #f5f6f7;
+    font-family: Tahoma;
+    font-size: 16px;
+  }
+  h1 {
+    color: #AA4852;
+  }
+  
+  h1, p {
+    margin: 1em auto;
+    text-align: center;
+  }
+  
+  form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+  
+  fieldset {
+    border: none;
+    padding: 2rem 0;
+    border-bottom: 3px solid #b692e7;
+  }
+  
+  fieldset:last-of-type { /**Styles the last fieldset**/
+    border-bottom: none;
+  }
+  
+  label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  input,
+  textarea,
+  select {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+  }
+  
+  input, textarea {
+    background-color: #4f4f8a;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+  }
+  
+  .input-radio {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+  }
+   .input-checkbox {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+  }
+  
+input[type="submit"] { /**Attribute selector**/
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #08D367;    border-color:#AA4852;
+    min-width: 300px;
+    background: linear-gradient(#55680D, #71F53E, #116C31);
+    box-shadow: 0 0 20px 0 #3B7E20CC;
+    border-radius: 5px;
+  }  
+  
+  a {
+    color: #dfdfe2;
+  }
+
+  footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+footer p {
+  font-size: 14px;
+  color: #AA4852;
+  margin: 0;
+}
+
+::placeholder {
+  color: #08D367;
+}
+hr {
+    height: 2px;
+    background-color: rgb(160, 145, 168);
+    border-color: grey;
+  }
+
+.established {
+    font-style: italic;
+    color: #EF6A33;
+  }
+  h2 {
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 1em auto;
+  text-align: center;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100px;
+    max-height: 130px;
+    margin-top: -35px;
+  }
