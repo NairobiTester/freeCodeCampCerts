@@ -1,0 +1,216 @@
+span[class~="sr-only"] {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    width: 1px !important;
+    position: absolute !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    padding: 0 !important;
+    margin: -1px !important;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    color: #0a0a23;
+  }
+  
+  h1 {
+    max-width: 37.25rem;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+  }
+  
+  h1 .flex {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  
+  h1 .flex span:first-of-type {
+    font-size: 0.7em;
+  }
+  
+  h1 .flex span:last-of-type {
+    font-size: 1.2em;
+  }
+  
+  section {
+    max-width: 40rem;
+    margin: 0 auto;
+    border: 2px solid #d0d0d5;
+  }
+  
+  #years {
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    background: #0a0a23;
+    color: #fff;
+    padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+    margin: 0 -2px;
+  }
+  
+  #years span[class] {
+    font-weight: bold;
+    width: 4.5rem;
+    text-align: right;
+  }
+  
+  .table-wrap {
+    padding: 0 0.75rem 1.5rem 0.75rem;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+    position: relative;
+    margin-top: 3rem;
+  }
+  
+  table caption {
+    color: #356eaf;
+    font-size: 1.3em;
+    font-weight: normal;
+    position: absolute;
+    top: -2.25rem;
+    left: 0.5rem;
+  }
+  
+  tbody td {
+    width: 100vw;
+    min-width: 4rem;
+    max-width: 4rem;
+  }
+  
+  tbody th {
+    width: calc(100% - 12rem);
+  }
+  
+  tr[class="total"] {
+    border-bottom: 4px double #0a0a23;
+    font-weight: bold;
+  }
+  
+  tr[class="total"] th {
+    text-align: left;
+    padding: 0.5rem 0 0.25rem 0.5rem;
+  }
+  
+  tr.total td {
+    text-align: right;
+    padding: 0 0.25rem;
+  }
+  
+  tr.total td:nth-of-type(3) {
+    padding-right: 0.5rem;
+  }
+  
+  tr.total:hover {
+    background-color: #99c9ff;
+  }
+  
+  td.current {
+    font-style: italic;
+  }
+  
+  tr.data {
+    background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+  }
+  
+  tr.data th {
+    text-align: left;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+  }
+  
+  tr.data th .description {
+    display: block;
+    font-weight: normal;
+    font-style: italic;
+    padding: 1rem 0 0.75rem;
+    margin-right: -13.5rem;
+  }
+  
+  tr.data td {
+    vertical-align: top;
+    padding: 0.3rem 0.25rem 0;
+    text-align: right;
+  }
+  
+  tr.data td:last-of-type {
+    padding-right: 0.5rem;
+  }
+
+  /**
+The CSS clip property is used to define the visible portions of an element. Set the span[class~="sr-only"] selector 
+to have a clip property of rect(1px, 1px, 1px, 1px). The clip-path property determines the shape the clip property 
+should take. Set the clip-path property to the value of inset(50%), forming the clip-path into a rectangle within 
+the element.
+
+span[class~="sr-only"] {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}
+
+To prevent the text content from overflowing, give your span[class~="sr-only"] selector an overflow property set to 
+hidden and a white-space property set to nowrap.
+Finally, you need to take these hidden elements out of the document flow. Give the span[class~="sr-only"] selector a 
+position property set to absolute, a padding property set to 0, and a margin property set to -1px. This will ensure 
+that not only are they no longer visible, but they are not even within the page view.
+
+The calc() function is a CSS function that allows you to calculate a value based on other values. For example, you can 
+use it to calculate the width of the viewport minus the margin of an element:
+
+.example {
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+Give #years a margin of 0 -2px, and a padding set to 0.5rem calc(1.25rem + 2px) 0.5rem 0 (see code).
+
+Style the text within your #years element by creating a #years span[class] selector. The span[class] syntax will target 
+any span element that has a class attribute set, regardless of the attribute's value. Give your new selector a bold font, 
+a width of 4.5rem, and text aligned to the right.
+
+#years span[class] {
+  font-weight: bold;
+  width: 4.5rem;
+  text-align: right;
+}
+
+Rather than having to constantly double-check you are not overwriting your earlier properties, you can use the 
+!important keyword to ensure these properties are always applied, regardless of order or specificity.
+
+Give each property in your span[class~="sr-only"] selector an !important keyword. Do not change any of the values (see code).
+
+Create a table selector to target your tables. Set the border-collapse property to collapse, which will allow cell borders 
+to collapse into a single border, instead of a border around each cell. Also set the border property to 0 to hide the 
+borders themselves.
+
+table {
+  border-collapse: collapse;
+  border: 0;
+}
+
+Create a selector to target your td elements within your table body. Give them a width to fill the viewport, with a 
+minimum and maximum of 4rem. This approach ensures that the width is fixed, whereas setting width specifically would 
+allow the elements to shrink to the container.
+
+tbody td {
+  width: 100vw;
+  min-width: 4rem;
+  max-width: 4rem;
+}
+
+The key difference between tr[class="total"] and tr.total is that the first will select tr elements where the only class 
+is total. The second will select tr elements where the class includes total.
+**/
