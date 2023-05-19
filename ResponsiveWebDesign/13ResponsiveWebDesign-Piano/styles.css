@@ -12,6 +12,8 @@ html {
     height: 290px;
     margin: 80px auto;
     padding: 90px 20px 0 20px;
+    position: relative;
+    border-radius: 10px;
   }
   
   .keys {
@@ -19,6 +21,7 @@ html {
     width: 949px;
     height: 180px;
     padding-left: 2px;
+    overflow: hidden;
   }
   
   .key {
@@ -28,6 +31,7 @@ html {
     height: 175px;
     margin: 2px;
     float: left;
+    border-radius: 0 0 3px 3px;
   }
   
   .key.black--key::after {
@@ -37,7 +41,38 @@ html {
     left: -18px;
     width: 32px;
     height: 100px;
+    border-radius: 0 0 3px 3px;
   }
+  
+  .logo {
+    width: 200px;
+    position: absolute;
+    top: 23px;
+  }
+  
+  @media (max-width: 768px) {
+    #piano {
+      width: 358px;
+    }
+  
+    .keys {
+      width: 318px;
+    }
+  
+    .logo {
+      width: 150px;
+    }
+  }
+  
+  @media (max-width: 1199px) and (min-width: 769px) {
+   #piano {
+     width: 675px;
+   }
+   .keys {
+     width: 633px;
+   }
+  }
+
 
   /**
 The ::before selector creates a pseudo-element which is the first child of the selected element, while the ::after 
@@ -67,4 +102,21 @@ content property, such as "♥". Remember to undo these changes when you are don
 .key.black--key::after {
   background-color: #1d1e22;
   content: ""; 
+
+The @media at-rule, also known as a media query, is used to conditionally apply CSS. Media queries are commonly used to apply CSS based on the viewport width using the max-width and min-width properties.
+
+In the below example the padding is applied to the .card class when the viewport is 960px wide and below.
+
+@media (max-width: 960px) {
+  .card {
+    padding: 2rem;
+  }
+}
+
+Logical operators can be used to construct more complex media queries. The and logical operator is used to query two 
+media conditions. For example, a media query that targets a display width between 500px and 1000px would be:
+
+@media (min-width: 500px) and (max-width: 1000px){
+
+}
 **/
