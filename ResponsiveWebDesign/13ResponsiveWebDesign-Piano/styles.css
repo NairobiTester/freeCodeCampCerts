@@ -1,0 +1,70 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+  
+  #piano {
+    background-color: #00471b;
+    width: 992px;
+    height: 290px;
+    margin: 80px auto;
+    padding: 90px 20px 0 20px;
+  }
+  
+  .keys {
+    background-color: #040404;
+    width: 949px;
+    height: 180px;
+    padding-left: 2px;
+  }
+  
+  .key {
+    background-color: #ffffff;
+    position: relative;
+    width: 41px;
+    height: 175px;
+    margin: 2px;
+    float: left;
+  }
+  
+  .key.black--key::after {
+    background-color: #1d1e22;
+    content: "";
+    position: absolute;
+    left: -18px;
+    width: 32px;
+    height: 100px;
+  }
+
+  /**
+The ::before selector creates a pseudo-element which is the first child of the selected element, while the ::after 
+selector creates a pseudo-element which is the last child of the selected element. These pseudo-elements are often 
+used to create cosmetic content, which you will see later in this project.
+
+For now, create a CSS selector to target all elements with *, and include the pseudo-elements with ::before and ::after. 
+Set the box-sizing property to inherit.
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+Using pseudo-selectors. To create the black keys, add a new .key.black--key::after selector. This will target the 
+elements with the class key black--key, and select the pseudo-element after these elements in the HTML.
+
+In the new selector, set the background-color to #1d1e22. Also set the content property to "". This will make the 
+pseudo-elements empty.
+
+The content property is used to set or override the content of the element. By default, the pseudo-elements created 
+by the ::before and ::after pseudo-selectors are empty, and the elements will not be rendered to the page. Setting 
+the content property to an empty string "" will ensure the element is rendered to the page while still being empty.
+
+If you would like to experiment, try removing the background-color property and setting different values for the 
+content property, such as "♥". Remember to undo these changes when you are done so the tests pass.
+
+.key.black--key::after {
+  background-color: #1d1e22;
+  content: ""; 
+**/
