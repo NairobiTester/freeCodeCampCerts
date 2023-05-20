@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>StarCodeCamp Python Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>StarCodeCamp Python Documentation</header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li>
+          <a class="nav-link" href="#Python_Basic_Syntax">Python Basic Syntax</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#Comments"
+            >Comments</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Variables">Variables</a></li>
+        <li><a class="nav-link" href="#Data_Types">Data Types</a></li>
+        <li>
+          <a class="nav-link" href="#Operators"
+            >Operators</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Decision_Making">Decision Making</a></li>
+        <li>
+          <a class="nav-link" href="#Loops">Loops</a>
+        </li>
+        <li><a class="nav-link" href="#Numbers">Numbers</a></li>
+        <li><a class="nav-link" href="#Strings">Strings</a></li>
+        <li>
+          <a class="nav-link" href="#Lists"
+            >Lists</a
+          >
+        </li>
+        <li><a class="nav-link" href="#tuples">Tuples</a></li>
+        <li>
+          <a class="nav-link" href="#Dictionary"
+            >Dictionary</a>
+        </li>
+        <li><a class="nav-link" href="#Functions">Functions</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+    <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+          <p>
+        Python is a popular high-level programming language known for its simplicity and readability. It was created by Guido van Rossum and first released in 1991. Python emphasizes code readability with its clean syntax and uses indentation instead of braces or keywords like other programming languages.
+      </p>
+      <p>
+        With Python, developers can build a wide range of applications, including web development, scientific computing, data analysis, machine learning, and automation. Its extensive standard library and vast ecosystem of third-party packages make it a versatile language for various domains and projects.
+      </p>
+      <ul>
+        <li>Python is widely used in data science and machine learning due to libraries like NumPy, Pandas, and TensorFlow.</li>
+        <li>Python has a large and active community that provides abundant resources, tutorials, and support.</li>
+      </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Python_Basic_Syntax">
+        <header>Python Basic Syntax</header>
+        <article>
+          <p>
+        Python uses a straightforward syntax that makes it easy to understand and write code. Here are some key elements of Python's basic syntax:
+      </p>
+      <ul>
+        <li>Indentation: Python uses indentation (typically four spaces) to define blocks of code instead of curly braces or keywords like "end". This promotes readability and enforces code consistency.</li>
+        <li>Variable assignment: Variables in Python are assigned using the equal sign (=). For example, <code>name = "John"</code> assigns the string "John" to the variable "name".</li>
+        <li>Print statements: The <code>print()</code> function is used to display output in Python. For example, <code>print("Hello, World!")</code> prints the string "Hello, World!" to the console.</li>
+        <li>Comments: Comments in Python start with the hash symbol (#). They are used to explain code and make it more understandable for others.</li>
+      </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Comments">
+        <header>Comments</header>
+        <article>
+      <p>
+        Comments in Python are used to provide explanations or annotations within the code. They are not executed by the interpreter and do not affect the program's functionality. Here are the different types of comments in Python:
+      </p>
+      <ul>
+        <li>Single-line comments: <code># This is a single-line comment.</code></li>
+        <li>Multi-line comments: <code>
+          '''
+          This is a multi-line comment.
+          It can span across multiple lines.
+          '''
+        </code></li>
+        <li>Documentation strings (docstrings): <code>
+          def my_function():
+              """
+              This is a docstring.
+              It provides a description of the function.
+              """
+              # Function code here
+        </code></li>
+      </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Variables">
+        <header>Variables</header>
+        <article>
+      <p>
+        In Python, variables are used to store data values. Here are a few points about Python variables:
+      </p>
+      <ul>
+        <li>Variable assignment: Variables in Python are assigned using the equal sign (=). For example, <code>name = "John"</code> assigns the string "John" to the variable "name".</li>
+        <li>Dynamic typing: Python is dynamically typed, meaning the type of a variable is determined at runtime. You can assign different types of values to the same variable.</li>
+        <li>Variable naming: Variable names should follow certain rules. They must start with a letter or underscore, and can contain letters, digits, and underscores. They are case-sensitive.</li>
+        <li>Variable reassignment: You can reassign a variable to a new value at any point in your code. The variable will then reference the new value.</li>
+      </ul>
+      <p>
+        Here are some examples of Python variable usage:
+      </p>
+      <code>
+        # Assigning values to variables
+        name = "John"
+        age = 25
+        is_student = True
+        
+        # Reassigning a variable
+        age = 26
+        
+        # Printing variable values
+        print(name)
+        print(age)
+        print(is_student)
+      </code>
+        </article>
+      </section>
+      <section class="main-section" id="Data_Types">        
+        <header>Data Types</header>
+        <article>
+        <p>
+        Python provides several built-in data types to store and manipulate different kinds of information. Here are some important Python data types:
+      </p>
+      <p>
+        - <strong>Numbers:</strong> Python supports integers, floating-point numbers, and complex numbers. Example: <code>42</code>, <code>3.14</code>, <code>1+2j</code>
+      </p>
+      <p>
+        - <strong>Strings:</strong> Strings are sequences of characters and are used to represent text in Python. Example: <code>"Hello, World!"</code>
+      </p>
+      <p>
+        - <strong>Lists:</strong> Lists are ordered collections of items that can be of different data types. They are mutable and allow duplicate values. Example: <code>[1, 2, 'apple', True]</code>
+      </p>
+      <p>
+        - <strong>Tuples:</strong> Tuples are similar to lists but are immutable, meaning their elements cannot be modified once defined. Example: <code>(1, 2, 'banana')</code>
+      </p>
+      <p>
+        - <strong>Dictionaries:</strong> Dictionaries are key-value pairs that allow you to store and retrieve values based on a unique key. Example: <code>{"name": "John", "age": 25}</code>
+      </p>
+      <p>
+        - <strong>Sets:</strong> Sets are unordered collections of unique elements. They support operations like union, intersection, and difference. Example: <code>{"apple", "banana", "orange"}</code>
+      </p>
+      </article>
+      </section>
+      <section class="main-section" id="Operators">
+        <header>Operators</header>
+        <article>
+          <p>
+        Python provides a variety of operators to perform different operations on variables and values. Here are some important Python operators:
+      </p>
+      <ul>
+        <li> Arithmetic operators: These operators perform mathematical operations on numeric values, such as addition (+), subtraction (-), multiplication (*), division (/), and modulus (%).</li>
+        <li> Assignment operators: These operators are used to assign values to variables, such as the equal sign (=), plus-equal (+=), minus-equal (-=), and more.</li>
+        <li> Comparison operators: These operators compare two values and return a Boolean result, such as equal to (==), not equal to (!=), greater than (>), less than (<), and more.</li>
+        <li>Logical operators: These operators are used to combine conditional statements, such as and (and), or (or), and not (not).</li>
+        <li>Bitwise operators: These operators perform operations on binary representations of numbers, such as bitwise AND (&), bitwise OR (|), bitwise XOR (^), and more.</li>
+      </ul>
+      <p>
+        Here are some examples of Python operators in action:
+      </p>
+      <code>
+        # Arithmetic operators
+        a = 5 + 3
+        b = 10 / 2
+        
+        # Assignment operators
+        x = 7
+        x += 3
+        
+        # Comparison operators
+        age = 25
+        is_adult = age >= 18
+        
+        # Logical operators
+        is_sunny = True
+        is_warm = True
+        is_summer = is_sunny and is_warm
+        
+        # Bitwise operators
+        x = 5 & 3
+        y = 10 | 2
+      </code>
+        </article>
+      </section>
+      <section class="main-section" id="Decision_Making">
+        <header>Decision Making</header>
+        <article>
+          <p>
+        Decision making is a fundamental aspect of programming. In Python, decision making is typically achieved using conditional statements, such as the <code>if</code>, <code>elif</code>, and <code>else</code> statements. These statements allow you to execute different blocks of code based on certain conditions.
+      </p>
+      <p>
+        Here is an example that demonstrates decision making in Python:
+      </p>
+      <code>
+        # Example 1
+        num = 10
+        
+        if num > 0:
+          print("The number is positive.")
+        elif num < 0:
+          print("The number is negative.")
+        else:
+          print("The number is zero.")
+        
+        # Example 2
+        age = 25
+        
+        if age >= 18:
+          print("You are an adult.")
+        else:
+          print("You are not an adult yet.")
+      </code>
+      <p>
+        In the first example, the code checks if the variable <code>num</code> is positive, negative, or zero, and prints the corresponding message. In the second example, the code checks if the variable <code>age</code> is greater than or equal to 18 and prints the appropriate message based on the condition.
+      </p>
+      <p>
+        Decision making allows you to control the flow of your program and execute different actions based on specific conditions. It is an essential concept in programming to handle different scenarios and make your code more flexible and intelligent.
+      </p>
+        </article>
+      </section>      
+      <!-- Loops -->
+<section class="main-section" id="Loops">
+  <header>Loops</header>
+    <article>   
+      <p>
+        Loops are used in Python to repeatedly execute a block of code. There are two types of loops in Python: <code>for</code> loops and <code>while</code> loops.
+      </p>
+      <p>
+        Here is an example of a <code>for</code> loop that iterates over a list of numbers:
+      </p>
+      <code>
+        numbers = [1, 2, 3, 4, 5]
+        for num in numbers:
+          print(num)
+      </code>
+    </article>
+   </section> 
+    <!-- Numbers -->
+    <section class="main-section" id="Numbers">
+        <header>Numbers</header>
+        <article>
+      <p>
+        In Python, numbers are a fundamental data type used to represent numeric values. Python supports integers, floating-point numbers, and complex numbers.
+      </p>
+      <p>
+        Here is an example of arithmetic operations using numbers:
+      </p>
+      <code>
+        x = 5
+        y = 2
+        sum = x + y
+        difference = x - y
+        product = x * y
+        quotient = x / y
+        
+        print(sum, difference, product, quotient)
+      </code>
+    </article>
+    </section>
+    <!-- Strings -->
+    <section class="main-section" id="Strings">
+        <header>Strings</header>
+        <article>    
+      <p>
+        Strings are used to represent text in Python. They are enclosed in single quotes ('') or double quotes (""). Python provides various operations and methods to manipulate strings.
+      </p>
+      <p>
+        Here is an example of string concatenation:
+      </p>
+      <code>
+        greeting = "Hello"
+        name = "John"
+        message = greeting + ", " + name + "!"
+        
+        print(message)
+      </code>
+    </article>
+    </section>
+    <!-- Lists -->
+    <section class="main-section" id="Lists">
+        <header>Lists</header>
+        <article>    
+      <p>
+        Lists are ordered collections of items in Python. They can contain elements of different data types and are mutable, meaning their elements can be modified.
+      </p>
+      <p>
+        Here is an example of creating and accessing a list:
+      </p>
+      <code>
+        fruits = ['apple', 'banana', 'orange']
+        print(fruits[0])
+      </code>
+    </article>
+    </section>
+    <!-- Tuples -->
+    <section class="main-section" id="Tuples">
+        <header>Tuples</header>
+        <article>
+      <p>
+        Tuples are similar to lists but are immutable, meaning their elements cannot be modified once defined. They are often used to store related pieces of information together.
+      </p>
+      <p>
+        Here is an example of creating and accessing a tuple:
+      </p>
+      <code>
+        person = ('John', 25, 'USA')
+        print(person[1])
+      </code>
+    </article>
+    </section>
+    <!-- Dictionary -->
+    <section class="main-section" id="Dictionary">
+        <header>Dictionary</header>
+        <article>
+      <p>
+        Dictionaries are key-value pairs in Python. They allow you to store and retrieve values based on a unique key. Dictionaries are mutable and unordered.
+      </p>
+      <p>Here is an example of creating and accessing a dictionary:
+      </p>
+      <code>
+        student = {'name': 'John', 'age': 25, 'country': 'USA'}
+        print(student['age'])
+      </code>
+    </article>
+    </section>
+    <!-- Functions -->
+    <section class="main-section" id="Functions">
+        <header>Functions</header>
+        <article>
+      <p>
+        Functions in Python are reusable blocks of code that perform specific tasks. They allow you to break your code into smaller, organized units and promote code reusability.
+      </p>
+      <p>
+        Here is an example of defining and calling a function:
+      </p>
+      <code>
+        def greet(name):
+          print("Hello, " + name + "!")
+        
+        greet("John")
+      </code>
+  </article>
+</section>
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ul>
+            <li>
+              Some extra information on Python can be found at:
+              <a id="ref"
+href="https://www.tutorialspoint.com/python/index.htm" target="_blank">Tutorials Point</a>
+            </li>
+          </ul>
+        </article>        
+      </section>      
+    </main>    
+  </body>  
+</html>
