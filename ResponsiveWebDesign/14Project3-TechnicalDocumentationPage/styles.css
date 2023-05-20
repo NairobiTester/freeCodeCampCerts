@@ -4,7 +4,7 @@ body {
   color: white;
   background-color: #244C6F;
   font-family: 'Open Sans', Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.5; 
 }
 
 #navbar {
@@ -95,10 +95,11 @@ code {
   #navbar ul {
     border: 1px solid;
     height: 207px;
+  
   }
 
   #navbar {
-    background-color: white;
+    background-color: #1A374E;
     position: absolute;
     top: 0;
     padding: 0;
@@ -108,12 +109,14 @@ code {
     border: none;
     z-index: 1;
     border-bottom: 2px solid;
+    padding-bottom: 45px;
+    
   }
 
   #main-doc {
     position: relative;
     margin-left: 0px;
-    margin-top: 270px;
+    margin-top: 320px;
   }
 }
 
@@ -128,11 +131,5 @@ code {
   padding-left: 10px;
   padding-right: 45px;
   min-width: 233px;
-}
-
-.star {
-    color: #AA4852;    
-    
-  }
-
+ }
 }
