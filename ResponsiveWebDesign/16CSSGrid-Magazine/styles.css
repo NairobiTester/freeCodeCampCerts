@@ -1,0 +1,238 @@
+*,
+::before,
+::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Baskervville", serif;
+	color: linen;
+	background-color: rgb(20, 30, 40);
+}
+
+h1 {
+	font-family: "Anton", sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Raleway", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: linen;
+}
+
+main {
+	display: grid;
+	grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem) minmax(
+			2rem,
+			1fr
+		);
+	row-gap: 3rem;
+}
+
+img {
+	width: 100%;
+	object-fit: cover;
+}
+
+hr {
+	margin: 1.5rem 0;
+	border: 1px solid rgba(120, 120, 120, 0.6);
+}
+
+.heading {
+	grid-column: 2 / 3;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	row-gap: 1.5rem;
+}
+
+.text {
+	grid-column: 2 / 3;
+	font-size: 1.8rem;
+	letter-spacing: 0.6px;
+	column-width: 25rem;
+	text-align: justify;
+}
+
+.hero {
+	grid-column: 1 / -1;
+	position: relative;
+}
+
+.hero-title {
+	text-align: center;
+	color: orangered;
+	font-size: 8rem;
+}
+
+.hero-subtitle {
+	font-size: 2.4rem;
+	color: orangered;
+	text-align: center;
+}
+
+.author {
+	font-size: 2rem;
+	font-family: "Raleway", sans-serif;
+}
+
+.author-name a:hover {
+	background-color: #306203;
+}
+
+.publish-date {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icons {
+	display: grid;
+	font-size: 3rem;
+	grid-template-columns: repeat(5, 1fr);
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	align-items: center;
+}
+
+.first-paragraph::first-letter {
+	font-size: 6rem;
+	color: orangered;
+	float: left;
+	margin-right: 1rem;
+}
+
+.quote {
+	color: #00beef;
+	font-size: 2.4rem;
+	text-align: center;
+	font-family: "Raleway", sans-serif;
+}
+
+.quote::before {
+	content: '" ';
+}
+
+.quote::after {
+	content: ' "';
+}
+
+.text-with-images {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	column-gap: 3rem;
+	margin-bottom: 3rem;
+}
+
+.lists {
+	list-style-type: none;
+	margin-top: 2rem;
+}
+
+.lists li {
+	margin-bottom: 1.5rem;
+}
+
+.list-title,
+.list-subtitle {
+	color: #00beef;
+}
+
+.image-wrapper {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: repeat(3, min-content);
+	gap: 2rem;
+	place-items: center;
+}
+
+.image-1,
+.image-3 {
+	grid-column: 1 / -1;
+}
+
+@media only screen and (max-width: 720px) {
+	.image-wrapper {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.text-with-images {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.hero-title {
+		font-size: 6rem;
+	}
+
+	.hero-subtitle,
+	.author,
+	.quote,
+	.list-title {
+		font-size: 1.8rem;
+	}
+
+	.social-icons {
+		font-size: 2rem;
+	}
+
+	.text {
+		font-size: 1.6rem;
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	.hero-title {
+		font-size: 4.5rem;
+	}
+}
+
+/**
+When setting the content to have a three-column layout by adding a grid-template-columns property with a value of 
+1fr 94rem 1fr, this will create three columns where the middle column is 94rem wide, and the first and last columns 
+are both 1 fraction of the remaining space in the grid container.
+
+Use the minmax function to make your columns responsive on any device. The minmax function takes two arguments, the 
+first being the minimum value and the second being the maximum. These values could be a length, percentage, fr, or 
+even a keyword like max-content.
+
+The grid-column property, which is shorthand for grid-column-start and grid-column-end, tells the grid item which 
+grid line to start and end at.
+
+Create a .heading rule and set the grid-column property to 2 / 3. This will tell the .heading element to start at 
+grid line 2 and end at grid line 3.
+
+The CSS repeat() function is used to repeat a value, rather than writing it out manually, and is helpful for grid layouts. 
+For example, setting the grid-template-columns property to repeat(20, 200px) would create 20 columns each 200px wide.
+
+Give your .heading element a grid-template-columns property set to repeat(2, 1fr) to create two columns of equal width.
+
+There may be times where you are unsure of how many columns your grid will have, but you want an element to stop at the 
+last column. To do this, you  can use -1 for the end column.
+
+Create a .hero selector and give it a grid-column property set to 1 / -1. This will tell the element to span the full width 
+of the grid.
+
+The object-fit property tells the browser how to position the element within its container. The value of 'cover' will set the 
+image to fill the container, cropping as needed to avoid changing the aspect ratio.
+The grid-auto-flow property takes either row or column as the first value, with an optional second value of dense. 
+grid-auto-flow uses an auto-placement algorithm to adjust the grid layout. Setting it to column will tell the algorithm 
+to create new columns for content as needed. The dense value allows the algorithm to backtrack and fill holes in the 
+grid with smaller items, which can result in items appearing out of order.
+
+Much like Flexbox, with CSS Grid you can align the content of grid items with align-items and justify-items. align-items 
+will align child elements along the column axis, and justify-items will align child elements along the row axis.**/
