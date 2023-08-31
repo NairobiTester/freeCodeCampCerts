@@ -1,4 +1,4 @@
-# freeCodeCampCerts
+# freeCodeCampCerts -  https://nairobitester.github.io/freeCodeCampCerts/
 This repo contains projects undertaken from freeCodeCamp.org in order to be a certified developer in the chosen tech stacks. Projects were completed in the following technology areas:
 
 => Responsive Web Design Certification
