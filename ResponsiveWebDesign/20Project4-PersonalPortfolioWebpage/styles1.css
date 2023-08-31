@@ -1,0 +1,318 @@
+/* styles1.css */
+
+/** :root {
+	--main-white: #f1eaa7;
+	--main-teal: #266d97;
+	--main-blue: #a4dcd4;
+	--main-gray: #1d4c52;
+	--main-green: #44cc4c;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f4f4f4;
+} ***/
+
+/* Custom properties/variables  */
+:root {
+	--main-white: #f1eaa7;
+	--main-teal: #266d97;
+	--main-blue: #a4dcd4;
+	--main-gray: #1d4c52;
+	--main-green: #44cc4c;
+}
+
+/* Base reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+
+	/* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+/* A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+*/
+
+/* I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+*/
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+	html {
+		font-size: 60%;
+	}
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+	html {
+		font-size: 58%;
+	}
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+	html {
+		font-size: 65%;
+	}
+}
+
+/* Base styles */
+
+body {
+	font-family: "Roboto", sans-serif;
+	line-height: 2.6;
+	margin-top: 110px;
+	color: var(--main-gray);
+}
+.content1 {
+	margin: 0 100px;
+}
+img {
+	background-size: cover;
+	background-position: center;
+	height: 300px;
+	margin-left: 250px;
+}
+@media screen and (max-width: 768px) {
+	/* Adjust header image styles for small screens (e.g., mobile phones) */
+	img {
+		height: 200px; /* Reduce the height for smaller screens */
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	/* Adjust header image styles for larger screens (e.g., desktops) */
+	img {
+		height: 400px; /* Increase the height for larger screens */
+	}
+}
+h1,
+h2 {
+	font-family: "Roboto", sans-serif;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 2.9rem;
+	color: #333;
+	margin-bottom: 1rem;
+	text-align: right;
+}
+
+h2 {
+	font-size: 1.8rem;
+	color: var(--main-gray);
+	margin: 2rem 0 1rem;
+	text-decoration: left;
+}
+
+ul {
+	list-style: none;
+}
+
+.nav {
+	display: flex;
+	padding: 0;
+	justify-content: flex-end;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: var(--main-gray);
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+	z-index: 10;
+}
+
+.nav-list {
+	display: flex;
+	margin-right: 2rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap;
+}
+.nav-item a {
+	color: var(--main-white);
+	text-decoration: none;
+}
+
+@media (max-width: 28.75em) {
+	.nav {
+		justify-content: center;
+	}
+
+	.nav-list {
+		margin: 0 1rem;
+	}
+}
+
+@media (max-width: 600px) {
+	h2 {
+		font-size: 22px;
+	}
+}
+@media (max-width: 450px) {
+	.nav-list {
+		display: block;
+		text-align: center;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.nav-item {
+		margin: 10px 0;
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+}
+
+.nav-list a {
+	display: block;
+	font-size: 2.2rem;
+	padding: 2rem;
+}
+
+.nav-list a:hover {
+	background: var(--main-blue);
+}
+
+/*other css*/
+#articles-container {
+	max-width: 800px;
+	margin: 0 auto;
+	margin-top: 5%;
+	padding: 40px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+	font-size: 24px;
+	margin-top: 0;
+}
+
+p {
+	font-size: 20px;
+	line-height: 2;
+	margin-bottom: 20px;
+	text-align: justify;
+}
+
+/*other css*/
+#articles-container a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+/*other css*/
+#articles-container a:hover {
+	text-decoration: underline;
+}
+
+#pagination-container {
+	margin-top: 20px;
+	text-align: center;
+	color: #1d4c52;
+}
+.read-more-link {
+	font-size: 18px; /* Adjust the font-size to your preference */
+}
+
+.button {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 4px;
+	left: 60%;
+}
+
+.button:hover {
+	background-color: #0056b3;
+}
+
+.button-container {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.load-more-button {
+	display: inline-block;
+	padding: 5px;
+	color: #ffffff;
+	text-decoration: none;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	background: var(--main-gray);
+	margin-bottom: 3%;
+	transition: background 0.3s ease-out;
+}
+
+.load-more-button:hover {
+	background: var(--main-teal);
+}
+.share {
+	display: flex;
+	flex: left;
+	justify-content: center;
+	padding: 15px;
+}
+/* Footer */
+
+footer {
+	font-weight: 300;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 0;
+	background: var(--main-gray);
+	border-top: 4px solid var(--main-teal);
+	color: var(--main-white);
+}
+
+footer > p {
+	margin: 2rem;
+}
+
+footer i {
+	vertical-align: middle;
+}
+
+@media (max-width: 28.75em) {
+	footer {
+		flex-direction: column;
+		text-align: center;
+	}
+}

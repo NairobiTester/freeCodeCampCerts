@@ -1,0 +1,480 @@
+/* Custom properties/variables  */
+:root {
+	--main-white: #f1eaa7;
+	--main-teal: #266d97;
+	--main-blue: #a4dcd4;
+	--main-gray: #1d4c52;
+	--main-green: #44cc4c;
+}
+
+/* Base reset */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+
+	/* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+/* A few media query to set some font sizes at different screen sizes.
+ * This helps automate a bit of responsiveness.
+ * The trick is to use the rem unit for size values, margin and padding.
+ * Because rem is relative to the document font size
+ * when we scale up or down the font size on the document
+ * it will affect all properties using rem units for the values.
+*/
+
+/* I am using the em unit for breakpoints
+ * The calculation is the following
+ * screen size divided by browser base font size
+ * As an example: a breakpoint at 980px
+ * 980px / 16px = 61.25em
+*/
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+	html {
+		font-size: 60%;
+	}
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+	html {
+		font-size: 58%;
+	}
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+	html {
+		font-size: 55%;
+	}
+}
+
+/* Base styles */
+
+body {
+	font-family: "Poppins", sans-serif;
+	font-size: 1.8rem; /* 18px */
+	font-weight: 400;
+	line-height: 1.4;
+	color: var(--main-white);
+}
+
+h1,
+h2 {
+	font-family: "Raleway", sans-serif;
+	font-weight: 700;
+	text-align: center;
+}
+
+h1 {
+	font-size: 6rem;
+	z-index: 2;
+	color: var(--main-blue);
+}
+
+h2 {
+	font-size: 4.2rem;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--main-white);
+}
+
+/* Welcome section */
+
+.welcome-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-image: linear-gradient(
+		62deg,
+		#a4dcd4 0%,
+		var(--main-teal) 50%,
+		var(--main-gray) 100%
+	);
+}
+
+.welcome-section > p {
+	font-size: 3rem;
+	font-weight: bold;
+	font-style: italic;
+	color: var(--main-white);
+	text-align: center;
+}
+
+.quote-container-left {
+	position: absolute;
+	top: 35%;
+	left: 5%;
+	z-index: 0;
+}
+.quote-container-right {
+	position: absolute;
+	top: 15%;
+	right: 5%;
+	z-index: 1;
+}
+.bubble {
+	--r: 25px; /* the radius */
+	--t: 30px; /* the size of the tail */
+
+	max-width: 300px;
+	padding: calc(2 * var(--r) / 3);
+	-webkit-mask: radial-gradient(var(--t) at var(--_d) 0, #0000 98%, #000 102%)
+			var(--_d) 100% / calc(100% - var(--r)) var(--t) no-repeat,
+		conic-gradient(at var(--r) var(--r), #000 75%, #0000 0) calc(var(--r) / -2)
+			calc(var(--r) / -2) padding-box,
+		radial-gradient(50% 50%, #000 98%, #0000 101%) 0 0 / var(--r) var(--r) space
+			padding-box;
+	background: linear-gradient(135deg, #fe6d00, #1384c5) border-box;
+	color: #f1eaa7;
+}
+.left {
+	--_d: 0%;
+	border-left: var(--t) solid #0000;
+	margin-right: var(--t);
+	place-self: start;
+}
+.right {
+	--_d: 100%;
+	border-right: var(--t) solid #0000;
+	margin-left: var(--t);
+	place-self: end;
+}
+
+.quote {
+	font-size: 16px;
+	font-style: italic;
+	color: #555;
+	text-align: center;
+	margin: 0;
+}
+
+.profile-image {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: center;
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 20px; /* Add margin at the bottom to create space */
+	z-index: 3;
+}
+
+/* nav */
+
+@media (max-width: 768px) {
+	.profile-image {
+		width: 150px;
+		height: 150px;
+	}
+	.quote {
+		font-size: 14px;
+	}
+	.welcome-section > p {
+		font-size: 2.5rem;
+	}
+	h1 {
+		font-size: 26px;
+	}
+}
+
+@media (max-width: 480px) {
+	.quote {
+		font-size: 12px;
+	}
+	.profile-image {
+		width: 100px; /* Adjust the size for even smaller screens */
+		height: 100px;
+	}
+	.welcome-section > p {
+		font-size: 2rem;
+	}
+	h1 {
+		font-size: 20px;
+	}
+}
+.nav {
+	display: flex;
+	padding: 10px;
+	justify-content: flex-end;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: var(--main-gray);
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
+	z-index: 10;
+}
+
+.nav-list {
+	display: flex;
+	margin-right: 2rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 28.75em) {
+	.nav {
+		justify-content: center;
+	}
+
+	.nav-list {
+		margin: 0 1rem;
+	}
+}
+@media (max-width: 600px) {
+	.welcome-section {
+		margin-top: 100px;
+	}
+	h2 {
+		font-size: 22px;
+	}
+}
+@media (max-width: 450px) {
+	.nav-list {
+		display: block;
+		text-align: center;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.nav-item {
+		margin: 10px 0;
+	}
+	.welcome-section {
+		margin-top: 300px;
+	}
+	h2 {
+		font-size: 24px;
+	}
+}
+
+.nav-list a {
+	display: block;
+	font-size: 2.2rem;
+	padding: 2rem;
+}
+
+.nav-list a:hover {
+	background: var(--main-blue);
+}
+
+/* Projects section */
+
+.projects-section {
+	text-align: center;
+	padding: 10rem 2rem;
+	background: var(--main-blue);
+}
+
+.projects-section-header {
+	max-width: 640px;
+	margin: 0 auto 6rem auto;
+	border-bottom: 0.2rem solid var(--main-white);
+	color: #000000;
+}
+
+@media (max-width: 28.75em) {
+	.projects-section-header {
+		font-size: 4rem;
+	}
+}
+
+/* "Automagic" image grid using no media queries */
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 4rem;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	margin-bottom: 6rem;
+}
+
+@media (max-width: 30.625em) {
+	.projects-section {
+		padding: 6rem 1rem;
+	}
+
+	.projects-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.project {
+	background: var(--main-gray);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius: 2px;
+}
+
+.code {
+	color: var(--main-gray);
+	transition: color 0.3s ease-out;
+}
+
+.project:hover .code {
+	color: #ff7f50;
+}
+
+.project-image {
+	height: calc(100% - 6.8rem);
+	width: 100%;
+	object-fit: cover;
+}
+
+.project-title {
+	font-size: 2rem;
+	padding: 1rem 0.5em;
+}
+
+.btn {
+	display: inline-block;
+	padding: 1rem 2rem;
+	border-radius: 2px;
+}
+
+.btn-show-all {
+	font-size: 2rem;
+	background: var(--main-gray);
+	transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+	background: var(--main-teal);
+}
+
+.btn-show-all:hover > i {
+	transform: translateX(2px);
+}
+
+.btn-show-all > i {
+	margin-left: 10px;
+	transform: translateX(0);
+	transition: transform 0.3s ease-out;
+}
+/*Skills & Certifications section*/
+.skills-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: 80vh;
+	padding: 0 2rem;
+	background: var(--main-teal);
+}
+.p-color {
+	color: var(--main-green);
+}
+/* Contact section */
+
+.contact-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: 80vh;
+	padding: 0 2rem;
+
+	background-image: linear-gradient(
+		62deg,
+		#045a4d 0%,
+		var(--main-teal) 25%,
+		var(--main-gray) 75%,
+		#045a4d 100%
+	);
+}
+
+.contact-section-header > h2 {
+	font-size: 4rem;
+}
+
+@media (max-width: 28.75em) {
+	.contact-section-header > h2 {
+		font-size: 2rem;
+		margin-top: 40px;
+	}
+}
+
+.contact-section-header > p {
+	font-style: italic;
+}
+
+.contact-links {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	max-width: 980px;
+	margin-top: 4rem;
+	flex-wrap: wrap;
+}
+
+.contact-details {
+	font-size: 2.4rem;
+	text-shadow: 2px 2px 1px #1f1f1f;
+	transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+	transform: translateY(8px);
+}
+
+/* Footer */
+
+footer {
+	font-weight: 300;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 2rem;
+	background: var(--main-gray);
+	border-top: 4px solid var(--main-teal);
+}
+
+footer > p {
+	margin: 2rem;
+}
+
+footer i {
+	vertical-align: middle;
+}
+
+@media (max-width: 28.75em) {
+	footer {
+		flex-direction: column;
+		text-align: center;
+	}
+}
